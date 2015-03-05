@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+#include <iostream>
+#include <string>
+#include<stdio.h>
+
+using namespace std;
+
+
+int main()
+{
+int i,l,m,sum,n,p=1,j;
+
+scanf("%d",&i);
+while(p<=i)
+    {
+        sum=0;
+        scanf("%d",&l);       //first number
+        scanf("%d",&m);         //second number
+        if (l%2==0)               // if first number is odd
+            l=l+1;
+        for(j=l;j<=m;j=j+2)         //sum all odd number
+        {
+           sum=sum+j;
+        }
+
+        cout<<"Case "<<p <<": "<<sum<<endl;       // print output
+        p++;
+    }
+    return 0;
+}
