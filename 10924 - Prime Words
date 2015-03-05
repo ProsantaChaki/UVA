@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+int main()
+{
+int i,l,sum,n,p,j;
+char c[22];
+while(gets(c))          //get string in char array
+    {
+    sum=0;
+    l=strlen(c);
+    for(i=0;i<l;i++)
+        {
+            n=c[i]-'a'+1;       //char to int conversion
+            if(1<=n && n<=26)       //if it is lower case
+            sum=sum+n;
+            else
+            {
+                n=c[i]-'A'+27;      //char to int conversion if it is upper case
+                sum=sum+n;
+            }
+
+        }
+        //printf("%d",sum);
+
+         p=1;
+        for(j=2; j<=sqrt(sum); j++)     //calculation if it is iprime
+        {
+            if(sum%j==0)
+            {
+                p=0;
+                break;
+            }
+        }
+        if(p==1 || sum==1)
+            printf("It is a prime word.\n");
+
+        else if(p==0)
+            printf("It is not a prime word.\n");
+    }
+    return 0;
+}
