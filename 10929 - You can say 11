@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+#include <iostream>
+#include <string>
+#include<stdio.h>
+
+using namespace std;
+int main()
+{
+    int i,j,s;
+    char n[1001];
+    while(1)
+        {
+            s=0;
+            scanf("%s",&n);         //get number as string "i used %s beacuse of its take full number"
+                                    //please use "%c" for observation
+            i=strlen(n);
+            if(s==0 && i==1)
+                break;
+
+            for(j=0;j<i;j++)
+                {
+                    s=s*10+n[j]-'0';            // convert string to integer one by one
+
+                    s=s%11;                     //divide by 11
+                }
+            if(s==0)
+                printf("%s is a multiple of 11.\n",n);
+            else
+                printf("%s is not a multiple of 11.\n",n);
+        }
+    return 0;
+}
