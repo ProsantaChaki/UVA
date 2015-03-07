@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int reverse(signed long int num,int cou)
+{
+
+    signed long int rev=0,t,r;
+
+	t=num;
+
+	while(t>0)
+	{
+		r=t%10;
+		t=t/10;
+		rev=rev*10+r;
+	}
+	cou++;
+	if(num==rev)
+	{
+	    cout <<cou-1<<" "<<rev<<endl;
+	    return 0;
+	}
+	else
+	{
+        reverse(num+rev,cou);
+	}
+}
+
+int main()
+{
+    int number,test;
+     cin>>test;
+    while(test!=0)
+    {
+        cin>>number;
+        reverse(number,0);
+        test--;
+
+    }
+
+    return 0;
+}
