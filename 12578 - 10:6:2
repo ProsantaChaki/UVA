@@ -1,0 +1,25 @@
+#include<iostream>
+#include<stdio.h>
+#include <string>
+#include <math.h>
+
+#define p acos(-1)
+
+using namespace std;
+
+int main()
+{
+    int N,i;
+    cin>>N;
+    for(i=1;i<=N;i++)
+    {
+        double l, w, r, a, area;
+        cin>>l;
+        w=.6*l;
+        r=w/3;
+        a=p*r*r;
+        area=l*w-a;
+         printf("%.2lf %.2lf\n",a, area);
+    }
+    return 0;
+}
