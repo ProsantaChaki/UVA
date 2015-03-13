@@ -1,0 +1,38 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int i,j,l1,l2,tem;
+    string s1,s2;
+
+     while(cin>>s1>>s2)     //get two string
+    {
+        l1=s1.size();
+        l2=s2.size();
+        for(i=0;i<l1;i++)
+            for(j=0;j<l2;j++)
+            {
+                if(s1[i]==s2[j])
+                {
+                     s1[i]='.';
+                     s2[j]='.';
+                    break;
+                }
+                s2[j]='.';
+            }
+            
+         for(i=0;i<l1;i++)
+            if(s1[i]!='.')
+                tem=1;
+                
+        if(tem==1)
+        cout<<"No"<<endl;
+        else
+        cout<<"Yes"<<endl;
+
+        tem=0;
+    }
+return 0;
+}
