@@ -1,0 +1,25 @@
+#include<iostream>
+#include <stdio.h>
+#include <math.h>
+
+//http://jwilson.coe.uga.edu/emt725/Medians.Triangle/Area.Medians.Tri.html
+
+int main()
+{
+    double a, b, c, s, area;
+    while(scanf("%lf",&a)!=EOF)
+    {
+        scanf(" %lf %lf", &b, &c);
+        if(a<0)
+            break;
+
+        s=(a+b+c)/2;
+        area=(4.0/3.0)*(sqrt(s*(s-a)*(s-b)*(s-c)));
+        if(area>0)
+            printf("%.3lf\n", area);
+        else
+        {   area=-1;
+            printf("%.3lf\n", area);
+        }
+    }
+}
